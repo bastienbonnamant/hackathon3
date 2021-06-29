@@ -6,19 +6,24 @@
                 <a class="nav-link" href="http://localhost:8000/">Home </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Category</a>
+                <a class="nav-link" href="#">A propos</a>
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="#">Programs</a>
+                <a class="nav-link" href="#">Nous contacter</a>
             </li>
-
             <li class="nav-item active">
-                <a class="nav-link" href="#">Seasons</a>
+                <a class="nav-link" href="http://localhost:8000/register">Inscription</a>
             </li>
-
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Episodes</a>
+            {% if app.user %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a>
+                </li>
+            {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://localhost:8000/login">Connexion</a>
+                </li>
+            {% endif %}
             </li>
 
     </div>
