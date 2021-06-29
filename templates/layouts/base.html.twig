@@ -4,11 +4,17 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
-		{% include '_navbar.html.twig' %}
 		<title>
-			{% block title %}Projet 3 Name{% endblock %}
+			{% block title %}Chattez avec des milliers de Freelance !{% endblock %}
 		</title>
 		{% block stylesheets %}
+
+			<style>
+				.alert-success{
+					font-weight: bold;
+					color: green;
+				}
+			</style>
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 		{% block javascripts %}
@@ -16,6 +22,8 @@
 		{% endblock %}
 	</head>
 	<body>
+
+	{{ include('layouts/partials/_flash_messages.html.twig') }}
 		{% block body %}{% endblock %}
 	</body>
 </html>
